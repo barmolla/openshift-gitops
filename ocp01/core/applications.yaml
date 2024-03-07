@@ -9,7 +9,7 @@ spec:
     server: 'https://kubernetes.default.svc'
   source:
     path: ocp01/proyectos
-    repoURL: git@github.com:damianlezcano/openshift-gitops.git
+    repoURL: https://github.com/barmolla/openshift-gitops.git
     targetRevision: main
   project: openshift-gitops
   syncPolicy: {}
