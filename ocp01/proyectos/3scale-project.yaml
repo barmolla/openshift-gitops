@@ -23,7 +23,7 @@ items:
         source:
           directory:
             recurse: true
-          path: proyectos/{{project}}
+          path: ocp01/proyectos/{{project}}
           repoURL: https://github.com/barmolla/openshift-gitops
           targetRevision: main
         syncPolicy:
