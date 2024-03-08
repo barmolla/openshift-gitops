@@ -71,12 +71,5 @@ items:
           repoURL: https://github.com/barmolla/openshift-gitops.git
           targetRevision: main
         syncPolicy: {}
-#        syncPolicy:
-#          automated:
-#            selfHeal: true
-#          syncOptions:
-#          - Validate=false
-#          - CreateNamespace=true
-#          - ApplyOutOfSyncOnly=true
 kind: List
 metadata: {}
