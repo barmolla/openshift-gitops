@@ -39,11 +39,11 @@ spec:
       mysql:
         persistentVolumeClaim:
           resources:
-            requests: 100Gi
+            requests: 1Gi
     fileStorage:
       persistentVolumeClaim:
         resources:
-          requests: 5Gi
+          requests: 1Gi
         storageClassName: nfs02
     sidekiqSpec:
       replicas: 1
