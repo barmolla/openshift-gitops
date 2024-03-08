@@ -10,6 +10,18 @@ oc create -f ocp01/core/rolebinding.yaml
 
 # Paso 2 (Configuración)
 
+Crear grupo cluster-admins
+
+```sh
+oc adm groups new cluster-admins
+```
+
+Agregar el usuario de la virtual al grupo creado
+
+```
+oc adm groups add-users cluster-admins opentlc-mgr
+```
+
 1. Configuramos `Openshift GitOps` registrando repositorio `openshift-gitops`
 
     ```sh

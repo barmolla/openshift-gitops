@@ -1,0 +1,79 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+#metadata:
+#  creationTimestamp: "2023-11-03T17:48:58Z"
+#  generation: 1
+#  labels:
+#    operators.coreos.com/3scale-operator.3scale: ""
+#  name: 3scale-operator
+#  namespace: 3scale
+#  resourceVersion: "1652377745"
+#  uid: 9bb7a46c-c50b-472c-91ee-749cced45e63
+spec:
+  channel: threescale-2.13
+  installPlanApproval: Automatic
+  name: 3scale-operator
+  source: redhat-operators
+  sourceNamespace: openshift-marketplace
+  startingCSV: 3scale-operator.v0.10.6
+#status:
+#  catalogHealth:
+#  - catalogSourceRef:
+#      apiVersion: operators.coreos.com/v1alpha1
+#      kind: CatalogSource
+#      name: certified-operators
+#      namespace: openshift-marketplace
+#      resourceVersion: "1249673368"
+#      uid: a4bbfdb6-53bb-418c-aefc-253e94e136f3
+#    healthy: true
+#    lastUpdated: "2023-11-03T17:49:06Z"
+#  - catalogSourceRef:
+#      apiVersion: operators.coreos.com/v1alpha1
+#      kind: CatalogSource
+#      name: community-operators
+#      namespace: openshift-marketplace
+#      resourceVersion: "1249673372"
+#      uid: 55f7a7a8-5939-474a-9ee5-3ad84ec5033a
+#    healthy: true
+#    lastUpdated: "2023-11-03T17:49:06Z"
+#  - catalogSourceRef:
+#      apiVersion: operators.coreos.com/v1alpha1
+#      kind: CatalogSource
+#      name: redhat-marketplace
+#      namespace: openshift-marketplace
+#      resourceVersion: "1249663400"
+#      uid: 0f91b8fd-1d99-4a6a-a1fc-88b6be99ab65
+#    healthy: true
+#    lastUpdated: "2023-11-03T17:49:06Z"
+#  - catalogSourceRef:
+#      apiVersion: operators.coreos.com/v1alpha1
+#      kind: CatalogSource
+#      name: redhat-operators
+#      namespace: openshift-marketplace
+#      resourceVersion: "1249659986"
+#      uid: a9876144-43e4-4cb8-9c3c-418fc6ad11cc
+#    healthy: true
+#    lastUpdated: "2023-11-03T17:49:06Z"
+#  conditions:
+#  - lastTransitionTime: "2023-11-03T17:49:06Z"
+#    message: all available catalogsources are healthy
+#    reason: AllCatalogSourcesHealthy
+#    status: "False"
+#    type: CatalogSourcesUnhealthy
+#  currentCSV: 3scale-operator.v0.10.7
+#  installPlanGeneration: 2
+#  installPlanRef:
+#    apiVersion: operators.coreos.com/v1alpha1
+#    kind: InstallPlan
+#    name: install-cdljm
+#    namespace: 3scale
+#    resourceVersion: "1299326492"
+#    uid: a0dcc7a9-c9c4-4e12-9ad9-df9cd3b720dc
+#  installedCSV: 3scale-operator.v0.10.7
+#  installplan:
+#    apiVersion: operators.coreos.com/v1alpha1
+#    kind: InstallPlan
+#    name: install-cdljm
+#    uuid: a0dcc7a9-c9c4-4e12-9ad9-df9cd3b720dc
+#  lastUpdated: "2024-02-14T02:16:14Z"
+#  state: AtLatestKnown
