@@ -52,7 +52,7 @@ spec:
   #https://console-openshift-console.apps.cluster-99n9j.99n9j.sandbox2175.opentlc.com
   #https://console-openshift-console.apps.osnoprod01.aseconecta.com.ar
   #wildcardDomain: 3scale.apps.osnoprod01.aseconecta.com.ar
-  wildcardDomain: 3scale.apps..cluster-99n9j.99n9j.sandbox2175.opentlc.com
+  wildcardDomain: 3scale.apps.cluster-99n9j.99n9j.sandbox2175.opentlc.com
   zync:
     appSpec:
       replicas: 1
