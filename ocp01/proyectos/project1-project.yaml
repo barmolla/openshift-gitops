@@ -140,5 +140,5 @@ items:
 #      kind: NetworkPolicy
 #    sourceRepos:
 #    - '*'
-#kind: List
-#metadata: {}
+kind: List
+metadata: {}
