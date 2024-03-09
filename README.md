@@ -14,7 +14,7 @@ Crear grupo cluster-admins
 
 ```sh
 oc adm groups new cluster-admins
-```
+```
 
 Agregar el usuario de la virtual al grupo creado
 
