@@ -12,7 +12,7 @@ items:
     project: test-3scale
     source:
       path: overlay/test
-      repoURL: https://github.com/barmolla/example-gitops.git
+      repoURL: https://github.com/barmolla/3scale-gitops.git
       targetRevision: main
     syncPolicy:
       automated:
