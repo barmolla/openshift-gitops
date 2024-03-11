@@ -4,7 +4,7 @@ metadata:
   labels:
     operators.coreos.com/3scale-operator.3scale: ""
   name: 3scale-operator
-  namespace: 3scale
+  namespace: dev-3scale
 spec:
   channel: threescale-2.13
   installPlanApproval: Automatic

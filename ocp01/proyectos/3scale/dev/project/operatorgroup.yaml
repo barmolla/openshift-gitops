@@ -4,4 +4,4 @@ metadata:
   name: operatorgroup-3scale
 spec:
   targetNamespaces:
-  - 3scale
+  - dev-3scale

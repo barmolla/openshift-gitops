@@ -1,0 +1,24 @@
+apiVersion: v1
+items:
+- apiVersion: argoproj.io/v1alpha1
+  kind: Application
+  metadata:
+    name: test-3scale-app
+    namespace: openshift-gitops
+  spec:
+    destination:
+      namespace: test-3scale
+      server: https://kubernetes.default.svc
+    project: test-3scale
+    source:
+      path: overlay/test
+      repoURL: https://github.com/barmolla/example-gitops.git
+      targetRevision: main
+    syncPolicy:
+      automated:
+        selfHeal: true
+      syncOptions:
+      - Validate=false
+      - ApplyOutOfSyncOnly=true
+kind: List
+metadata: {}
