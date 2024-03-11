@@ -99,5 +99,46 @@ items:
       kind: NetworkPolicy
     sourceRepos:
     - '*'
+- apiVersion: argoproj.io/v1alpha1
+  kind: AppProject
+  metadata:
+    finalizers:
+    - resources-finalizer.argocd.argoproj.io
+    name: project1
+  spec:
+    clusterResourceWhitelist:
+    - group: '*'
+      kind: Namespace
+    - group: argoproj.io
+      kind: Application
+    - group: argoproj.io
+      kind: AppProject
+    - group: argoproj.io
+      kind: ApplicationSet
+    - group: '*'
+      kind: Secret
+    - group: '*'
+      kind: PersistentVolumeClaim
+    - group: '*'
+      kind: Pipeline
+    - group: '*'
+      kind: ServiceAccount
+    - group: '*'
+      kind: LimitRange
+    - group: "*"
+      kind: ResourceQuota
+    
+    destinations:
+    - namespace: openshift-gitops
+      server: https://kubernetes.default.svc
+    - namespace: dev-project1
+      server: https://kubernetes.default.svc
+    - namespace: test-project1
+      server: https://kubernetes.default.svc
+    namespaceResourceBlacklist:
+    - group: ""
+      kind: NetworkPolicy
+    sourceRepos:
+    - '*'
 kind: List
 metadata: {}
