@@ -8,98 +8,31 @@ items:
     generators:
     - list:
         elements:
-        - env: dev
-          project: 3scale
-        - env: test
-          project: 3scale
-
+        - project: 3scale
     template:
       metadata:
         finalizers:
         - resources-finalizer.argocd.argoproj.io
-        name: '{{env}}-{{project}}'
+        name: '{{project}}'
         namespace: openshift-gitops
       spec:
         destination:
-          namespace: '{{env}}-{{project}}'
+          namespace: '3scale'
           server: https://kubernetes.default.svc
         project: '{{project}}'
         source:
           directory:
             recurse: true
-          path: ocp01/proyectos/{{project}}/{{env}}
+          path: ocp01/proyectos/{{project}}
           repoURL: https://github.com/barmolla/openshift-gitops
           targetRevision: main
-        syncPolicy: {}
-#        syncPolicy:
-#          automated:
-#            selfHeal: true
-#          syncOptions:
-#          - Validate=false
-#          - CreateNamespace=true
-#          - ApplyOutOfSyncOnly=true
-- apiVersion: argoproj.io/v1alpha1
-  kind: AppProject
-  metadata:
-    finalizers:
-    - resources-finalizer.argocd.argoproj.io
-    name: dev-3scale
-  spec:
-    clusterResourceWhitelist:
-    - group: '*'
-      kind: Namespace
-    - group: '*'
-      kind: Secret
-    - group: '*'
-      kind: PersistentVolumeClaim
-    - group: '*'
-      kind: Pipeline
-    - group: '*'
-      kind: ServiceAccount
-    - group: '*'
-      kind: LimitRange
-    - group: "*"
-      kind: ResourceQuota
-    
-    destinations:
-    - namespace: dev-3scale
-      server: https://kubernetes.default.svc
-    namespaceResourceBlacklist:
-    - group: ""
-      kind: NetworkPolicy
-    sourceRepos:
-    - '*'
-- apiVersion: argoproj.io/v1alpha1
-  kind: AppProject
-  metadata:
-    finalizers:
-    - resources-finalizer.argocd.argoproj.io
-    name: test-3scale
-  spec:
-    clusterResourceWhitelist:
-    - group: '*'
-      kind: Namespace
-    - group: '*'
-      kind: Secret
-    - group: '*'
-      kind: PersistentVolumeClaim
-    - group: '*'
-      kind: Pipeline
-    - group: '*'
-      kind: ServiceAccount
-    - group: '*'
-      kind: LimitRange
-    - group: "*"
-      kind: ResourceQuota
-    
-    destinations:
-    - namespace: test-3scale
-      server: https://kubernetes.default.svc
-    namespaceResourceBlacklist:
-    - group: ""
-      kind: NetworkPolicy
-    sourceRepos:
-    - '*'
+        syncPolicy:
+          automated:
+            selfHeal: true
+          syncOptions:
+          - Validate=false
+          - CreateNamespace=true
+          - ApplyOutOfSyncOnly=true
 - apiVersion: argoproj.io/v1alpha1
   kind: AppProject
   metadata:
@@ -110,12 +43,6 @@ items:
     clusterResourceWhitelist:
     - group: '*'
       kind: Namespace
-    - group: argoproj.io
-      kind: Application
-    - group: argoproj.io
-      kind: AppProject
-    - group: argoproj.io
-      kind: ApplicationSet
     - group: '*'
       kind: Secret
     - group: '*'
@@ -132,9 +59,7 @@ items:
     destinations:
     - namespace: openshift-gitops
       server: https://kubernetes.default.svc
-    - namespace: dev-3scale
-      server: https://kubernetes.default.svc
-    - namespace: test-3scale
+    - namespace: 3scale
       server: https://kubernetes.default.svc
     namespaceResourceBlacklist:
     - group: ""

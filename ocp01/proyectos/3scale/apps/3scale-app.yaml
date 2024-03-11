@@ -3,15 +3,15 @@ items:
 - apiVersion: argoproj.io/v1alpha1
   kind: Application
   metadata:
-    name: test-3scale-app
+    name: 3scale-app
     namespace: openshift-gitops
   spec:
     destination:
-      namespace: test-3scale
+      namespace: 3scale
       server: https://kubernetes.default.svc
-    project: test-3scale
+    project: 3scale
     source:
-      path: overlay/test
+      path: /
       repoURL: https://github.com/barmolla/3scale-gitops.git
       targetRevision: main
     syncPolicy:

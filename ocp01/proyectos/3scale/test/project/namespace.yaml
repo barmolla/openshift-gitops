@@ -1,8 +1,0 @@
-apiVersion: v1
-items:
-- apiVersion: v1
-  kind: Namespace
-  metadata:
-    name: test-3scale
-kind: List
-metadata: {}

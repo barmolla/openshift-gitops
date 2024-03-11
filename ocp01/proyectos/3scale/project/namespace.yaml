@@ -3,6 +3,6 @@ items:
 - apiVersion: v1
   kind: Namespace
   metadata:
-    name: dev-3scale
+    name: 3scale
 kind: List
 metadata: {}
