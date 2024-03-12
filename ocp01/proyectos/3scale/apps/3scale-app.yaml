@@ -12,7 +12,7 @@ items:
     project: 3scale
     source:
       path: .
-      repoURL: https://github.com/barmolla/3scale-gitops.git
+      repoURL: https://github.com/barmolla/3scale-gitops-wo-overlay.git
       targetRevision: main
     syncPolicy: {}
 #    syncPolicy:
