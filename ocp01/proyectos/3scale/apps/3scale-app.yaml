@@ -14,11 +14,12 @@ items:
       path: .
       repoURL: https://github.com/barmolla/3scale-gitops.git
       targetRevision: main
-    syncPolicy:
-      automated:
-        selfHeal: true
-      syncOptions:
-      - Validate=false
-      - ApplyOutOfSyncOnly=true
+    syncPolicy: {}
+#    syncPolicy:
+#      automated:
+#        selfHeal: true
+#      syncOptions:
+#      - Validate=false
+#      - ApplyOutOfSyncOnly=true
 kind: List
 metadata: {}
