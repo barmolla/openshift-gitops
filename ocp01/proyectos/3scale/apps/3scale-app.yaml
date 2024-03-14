@@ -13,7 +13,7 @@ items:
     source:
       path: .
       repoURL: https://github.com/barmolla/3scale-gitops-wo-overlay.git
-      targetRevision: main
+      targetRevision: dev
     syncPolicy: {}
 #    syncPolicy:
 #      automated:
