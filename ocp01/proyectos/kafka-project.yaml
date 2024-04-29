@@ -1,0 +1,64 @@
+apiVersion: v1
+items:
+- apiVersion: argoproj.io/v1alpha1
+  kind: ApplicationSet
+  metadata:
+    name: kafka-set
+  spec:
+    generators:
+    - list:
+        elements:
+        - project: kafka
+    template:
+      metadata:
+        finalizers:
+        - resources-finalizer.argocd.argoproj.io
+        name: '{{project}}'
+        namespace: openshift-gitops
+      spec:
+        destination:
+          namespace: 'kafka'
+          server: https://kubernetes.default.svc
+        project: '{{project}}'
+        source:
+          directory:
+            recurse: true
+          path: ocp01/proyectos/{{project}}
+          repoURL: https://github.com/barmolla/openshift-gitops
+          targetRevision: main
+        syncPolicy: {}
+- apiVersion: argoproj.io/v1alpha1
+  kind: AppProject
+  metadata:
+    finalizers:
+    - resources-finalizer.argocd.argoproj.io
+    name: kafka
+  spec:
+    clusterResourceWhitelist:
+    - group: '*'
+      kind: Namespace
+    - group: '*'
+      kind: Secret
+    - group: '*'
+      kind: PersistentVolumeClaim
+    - group: '*'
+      kind: Pipeline
+    - group: '*'
+      kind: ServiceAccount
+    - group: '*'
+      kind: LimitRange
+    - group: "*"
+      kind: ResourceQuota
+    
+    destinations:
+    - namespace: openshift-gitops
+      server: https://kubernetes.default.svc
+    - namespace: kafka
+      server: https://kubernetes.default.svc
+    namespaceResourceBlacklist:
+    - group: ""
+      kind: NetworkPolicy
+    sourceRepos:
+    - '*'
+kind: List
+metadata: {}
