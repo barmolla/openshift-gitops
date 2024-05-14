@@ -4,7 +4,8 @@ metadata:
   labels:
     operators.coreos.com/amq-streams.kafka: ""
   name: amq-streams
-  namespace: kafka
+  #namespace: kafka
+  namespace: qa-kafka
 spec:
   channel: stable
   installPlanApproval: Automatic

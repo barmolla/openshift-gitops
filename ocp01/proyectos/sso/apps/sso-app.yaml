@@ -3,16 +3,16 @@ items:
 - apiVersion: argoproj.io/v1alpha1
   kind: Application
   metadata:
-    name: kafka-app
+    name: sso-app
     namespace: openshift-gitops
   spec:
     destination:
-      namespace: kafka
+      namespace: sso
       server: https://kubernetes.default.svc
-    project: kafka
+    project: 3scale
     source:
       path: .
-      repoURL: https://github.com/barmolla/kafka-gitops.git
+      repoURL: https://github.com/barmolla/sso-gitops.git
       targetRevision: main
     syncPolicy: {}
 #    syncPolicy:

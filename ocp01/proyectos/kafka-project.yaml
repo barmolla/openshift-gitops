@@ -8,7 +8,10 @@ items:
     generators:
     - list:
         elements:
-        - project: kafka
+        - env: desa
+          project: kafka
+        - env: qa
+          project: kafka
     template:
       metadata:
         finalizers:
@@ -17,13 +20,15 @@ items:
         namespace: openshift-gitops
       spec:
         destination:
-          namespace: 'kafka'
+#          namespace: 'kafka'
+          namespace: '{{project}}-{{env}}'
           server: https://kubernetes.default.svc
         project: '{{project}}'
         source:
           directory:
             recurse: true
-          path: ocp01/proyectos/{{project}}
+          #path: ocp01/proyectos/{{project}}
+          path: ocp01/proyectos/{{project}}/{{env}}
           repoURL: https://github.com/barmolla/openshift-gitops
           targetRevision: main
         syncPolicy: {}
@@ -53,7 +58,11 @@ items:
     destinations:
     - namespace: openshift-gitops
       server: https://kubernetes.default.svc
-    - namespace: kafka
+#    - namespace: kafka
+#      server: https://kubernetes.default.svc
+    - namespace: desa-kafka
+      server: https://kubernetes.default.svc
+    - namespace: qakafka
       server: https://kubernetes.default.svc
     namespaceResourceBlacklist:
     - group: ""
