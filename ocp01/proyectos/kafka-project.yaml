@@ -16,7 +16,7 @@ items:
       metadata:
         finalizers:
         - resources-finalizer.argocd.argoproj.io
-        name: '{{project}}'
+        name: '{{env}}-{{project}}'
         namespace: openshift-gitops
       spec:
         destination:
