@@ -21,7 +21,7 @@ items:
       spec:
         destination:
 #          namespace: 'kafka'
-          namespace: '{{project}}-{{env}}'
+          namespace: '{{env}}-{{project}}'
           server: https://kubernetes.default.svc
         project: '{{project}}'
         source:
