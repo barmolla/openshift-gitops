@@ -1,0 +1,26 @@
+apiVersion: v1
+items:
+- apiVersion: argoproj.io/v1alpha1
+  kind: Application
+  metadata:
+    name: desa-amqstreams-app
+    namespace: openshift-gitops
+  spec:
+    destination:
+      namespace: desa-amqstreams
+      server: https://kubernetes.default.svc
+    project: amqstreams
+    source:
+      path: .
+      repoURL: https://github.com/barmolla/kafka-gitops.git
+      #repoURL: https://gitlab.cajval.sba.com.ar/devops-delivery/amqstreams-gitops.git
+      targetRevision: main
+    syncPolicy: {}
+#    syncPolicy:
+#      automated:
+#        selfHeal: true
+#      syncOptions:
+#      - Validate=false
+#      - ApplyOutOfSyncOnly=true
+kind: List
+metadata: {}

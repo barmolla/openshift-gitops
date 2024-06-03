@@ -1,0 +1,25 @@
+apiVersion: v1
+items:
+- apiVersion: argoproj.io/v1alpha1
+  kind: Application
+  metadata:
+    name: qa-amqstreams-app
+    namespace: openshift-gitops
+  spec:
+    destination:
+      namespace: qa-amqstreams
+      server: https://kubernetes.default.svc
+    project: amqstreams
+    source:
+      path: .
+      repoURL: https://github.com/barmolla/kafka-gitops.git
+      targetRevision: main
+    syncPolicy: {}
+#    syncPolicy:
+#      automated:
+#        selfHeal: true
+#      syncOptions:
+#      - Validate=false
+#      - ApplyOutOfSyncOnly=true
+kind: List
+metadata: {}
