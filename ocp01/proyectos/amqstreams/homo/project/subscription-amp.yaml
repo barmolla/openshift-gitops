@@ -3,9 +3,17 @@ kind: Subscription
 metadata:
   labels:
     operators.coreos.com/amq-streams.kafka: ""
-  name: amq-streams
+  name: homo-amq-streams
   namespace: homo-amqstreams
 spec:
+  config:
+    resources: 
+      requests:
+        memory: "512Mi"
+        cpu: 250m
+      limits:
+        memory: "1024Mi"
+        cpu: 500m
   channel: stable
   installPlanApproval: Automatic
   name: amq-streams
