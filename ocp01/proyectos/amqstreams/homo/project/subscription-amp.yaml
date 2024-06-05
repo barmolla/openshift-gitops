@@ -4,7 +4,7 @@ metadata:
   labels:
     operators.coreos.com/amq-streams.kafka: ""
   name: homo-amq-streams
-  namespace: homo-amqstreams
+  namespace: homo-kafka
 spec:
   config:
     resources: 

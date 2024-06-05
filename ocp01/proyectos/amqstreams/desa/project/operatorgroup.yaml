@@ -4,5 +4,5 @@ metadata:
   name: desa-operatorgroup-kafka
 spec:
   targetNamespaces:
-  - desa-amqstreams
+  - desa-kafka
   upgradeStrategy: Default

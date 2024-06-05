@@ -18,11 +18,11 @@ items:
       metadata:
         finalizers:
         - resources-finalizer.argocd.argoproj.io
-        name: '{{env}}-{{project}}'
+        name: '{{env}}-kafka'
         namespace: openshift-gitops
       spec:
         destination:
-          namespace: '{{env}}-{{project}}'
+          namespace: '{{env}}-kafka'
           server: https://kubernetes.default.svc
         project: '{{project}}'
         source:
@@ -59,11 +59,11 @@ items:
     destinations:
     - namespace: openshift-gitops
       server: https://kubernetes.default.svc
-    - namespace: desa-amqstreams
+    - namespace: desa-kafka
       server: https://kubernetes.default.svc
-    - namespace: qa-amqstreams
+    - namespace: qa-kafka
       server: https://kubernetes.default.svc
-    - namespace: homo-amqstreams
+    - namespace: homo-kafka
       server: https://kubernetes.default.svc
     namespaceResourceBlacklist:
     - group: ""

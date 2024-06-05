@@ -3,6 +3,6 @@ items:
 - apiVersion: v1
   kind: Namespace
   metadata:
-    name: qa-amqstreams
+    name: qa-kafka
 kind: List
 metadata: {}

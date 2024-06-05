@@ -4,4 +4,4 @@ metadata:
   name: qa-operatorgroup-kafka
 spec:
   targetNamespaces:
-  - qa-amqstreams
+  - qa-kafka

@@ -7,7 +7,7 @@ items:
     namespace: openshift-gitops
   spec:
     destination:
-      namespace: qa-amqstreams
+      namespace: qa-kafka
       server: https://kubernetes.default.svc
     project: amqstreams
     source:

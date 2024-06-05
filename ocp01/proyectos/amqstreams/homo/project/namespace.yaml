@@ -3,6 +3,6 @@ items:
 - apiVersion: v1
   kind: Namespace
   metadata:
-    name: homo-amqstreams
+    name: homo-kafka
 kind: List
 metadata: {}

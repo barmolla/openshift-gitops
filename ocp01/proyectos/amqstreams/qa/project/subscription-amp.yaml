@@ -4,7 +4,7 @@ metadata:
   labels:
     operators.coreos.com/amq-streams.kafka: ""
   name: qa-amq-streams
-  namespace: qa-amqstreams
+  namespace: qa-kafka
 spec:
   config:
     resources: 

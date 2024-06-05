@@ -4,4 +4,4 @@ metadata:
   name: homo-operatorgroup-amqstreams
 spec:
   targetNamespaces:
-  - homo-amqstreams
+  - homo-kafka

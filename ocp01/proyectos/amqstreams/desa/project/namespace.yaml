@@ -3,6 +3,6 @@ items:
 - apiVersion: v1
   kind: Namespace
   metadata:
-    name: desa-amqstreams
+    name: desa-kafka
 kind: List
 metadata: {}
