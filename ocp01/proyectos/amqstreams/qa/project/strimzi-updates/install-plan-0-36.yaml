@@ -1,6 +1,7 @@
 apiVersion: operators.coreos.com/v1alpha1
 kind: InstallPlan
 metadata:
+  name: install-plan-0-36
   namespace: qa-kafka
   labels:
     operators.coreos.com/strimzi-kafka-operator.qa-kafka: ''
