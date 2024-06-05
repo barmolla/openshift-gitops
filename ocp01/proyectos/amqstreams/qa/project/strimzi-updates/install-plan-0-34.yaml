@@ -1,0 +1,11 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: InstallPlan
+metadata:
+  namespace: qa-kafka
+  labels:
+    operators.coreos.com/strimzi-kafka-operator.qa-kafka: ''
+spec:
+  approval: Automatic
+  approved: false
+  clusterServiceVersionNames:
+    - strimzi-cluster-operator.v0.34.0
